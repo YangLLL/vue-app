@@ -14,97 +14,95 @@ import ProductList from '../../components/cart/ProductList'
 import ChoosedList from '../../components/cart/ChoosedList'
 
 export default {
-    components: {
-        ProductList,
-        ChoosedList,
-    },
-    data() {
-        return {
-            productList: [{
-                id: 1,
-                productName: '商品1',
-                price: 10,
-            }, {
-                id: 2,
-                productName: '商品2',
-                price: 15, 
-            }, {
-                id: 3,
-                productName: '商品3',
-                price: 20, 
-            }],
-            choosedList: [{
-                id: 1,
-                productName: '商品1',
-                price: 10,
-                quantity: 1,
-            }],
-        }
-    },
-    provide() {
-        return {
-            addToCart: this.addToCart,
-            addQuantity: this.addQuantity,
-            reduceQuantity: this.reduceQuantity,
-        }
-    },
-    computed: {
-         getTotalPrice() {
-            let totalPrice = 0
-            this.choosedList.forEach(item => {
-                totalPrice = totalPrice + item.price * item.quantity
-            })
-            return totalPrice
-        },
-    },
-    methods: {
-        addToCart(item) {
-            let newChooseList = this.choosedList
-            const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
-            if(currentItemIndex !== -1) {
-                newChooseList[currentItemIndex].quantity = this.choosedList[currentItemIndex].quantity + 1
-            } else {
-                const newItem = {...item, quantity: 1}
-                newChooseList = this.choosedList.concat(newItem)
-            }
-            this.choosedList = newChooseList
-        },
-        addQuantity(item) {
-            const newChooseList = this.choosedList.map(chooseItem => {
-                if (chooseItem.id === item.id) {
-                    return {
-                        ...chooseItem,
-                        quantity: item.quantity + 1
-                    }
-                }
-                return chooseItem
-                
-            })
-            this.choosedList = newChooseList
-        },
-        reduceQuantity(item) {
-            console.log('item',item)
-            // let newChooseList = Object.assign({}, this.choosedList)
-            let newChooseList = this.choosedList
-            const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
-            if (item.quantity <= 1) {
-                newChooseList.splice(currentItemIndex, 1)
-            } else {
-                newChooseList[currentItemIndex] = {
-                    ...item,
-                    quantity: item.quantity - 1
-                }
-            }
-            console.log('newChooseList',newChooseList, 'this.choosedList', this.choosedList)
-            this.choosedList = newChooseList
-             console.log('this.choosedList------', this.choosedList)
-        }
-       
+  components: {
+    ProductList,
+    ChoosedList
+  },
+  data () {
+    return {
+      productList: [{
+        id: 1,
+        productName: '商品1',
+        price: 10
+      }, {
+        id: 2,
+        productName: '商品2',
+        price: 15
+      }, {
+        id: 3,
+        productName: '商品3',
+        price: 20
+      }],
+      choosedList: [{
+        id: 1,
+        productName: '商品1',
+        price: 10,
+        quantity: 1
+      }]
     }
+  },
+  provide () {
+    return {
+      addToCart: this.addToCart,
+      addQuantity: this.addQuantity,
+      reduceQuantity: this.reduceQuantity
+    }
+  },
+  computed: {
+    getTotalPrice () {
+      let totalPrice = 0
+      this.choosedList.forEach(item => {
+        totalPrice = totalPrice + item.price * item.quantity
+      })
+      return totalPrice
+    }
+  },
+  methods: {
+    addToCart (item) {
+      let newChooseList = this.choosedList
+      const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
+      if (currentItemIndex !== -1) {
+        newChooseList[currentItemIndex].quantity = this.choosedList[currentItemIndex].quantity + 1
+      } else {
+        const newItem = {...item, quantity: 1}
+        newChooseList = this.choosedList.concat(newItem)
+      }
+      this.choosedList = newChooseList
+    },
+    addQuantity (item) {
+      const newChooseList = this.choosedList.map(chooseItem => {
+        if (chooseItem.id === item.id) {
+          return {
+            ...chooseItem,
+            quantity: item.quantity + 1
+          }
+        }
+        return chooseItem
+      })
+      this.choosedList = newChooseList
+    },
+    reduceQuantity (item) {
+      console.log('item', item)
+      // let newChooseList = Object.assign({}, this.choosedList)
+      let newChooseList = this.choosedList
+      const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
+      if (item.quantity <= 1) {
+        newChooseList.splice(currentItemIndex, 1)
+      } else {
+        newChooseList[currentItemIndex] = {
+          ...item,
+          quantity: item.quantity - 1
+        }
+      }
+      console.log('newChooseList', newChooseList, 'this.choosedList', this.choosedList)
+      this.choosedList = newChooseList
+      console.log('this.choosedList------', this.choosedList)
+    }
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
     margin-top: 30px;
     margin-left: 30px;

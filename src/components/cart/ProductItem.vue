@@ -1,29 +1,29 @@
 <template>
-    <div class="item">
-        <p>{{item.productName}} - {{item.price}}元</p>
-        <p class="add-to-card" @click="addToCart(item)">加入购物车</p>
-    </div>
+  <div class="item">
+    <p>{{item.productName}} - {{item.price}}元</p>
+    <p class="add-to-card" @click="addToCart(item)">加入购物车</p>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        item: {
-            type: Object,
-        }
-    },
-
-    inject: ['addToCart'],
-
-    methods: {
-        // handleAdd(item) {
-        //     this.addToCart(item)
-        // }
+  props: {
+    item: {
+      type: Object
     }
+  },
+
+  inject: ['addToCart'],
+
+  methods: {
+    // handleAdd(item) {
+    //     this.addToCart(item)
+    // }
+  }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .item {
         display: flex;
         align-items: center;
