@@ -59,15 +59,13 @@ export default {
   },
   methods: {
     addToCart (item) {
-      let newChooseList = this.choosedList
       const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
       if (currentItemIndex !== -1) {
-        newChooseList[currentItemIndex].quantity = this.choosedList[currentItemIndex].quantity + 1
+        this.choosedList[currentItemIndex].quantity = this.choosedList[currentItemIndex].quantity + 1
       } else {
         const newItem = {...item, quantity: 1}
-        newChooseList = this.choosedList.concat(newItem)
+        this.choosedList.unshift(newItem)
       }
-      this.choosedList = newChooseList
     },
     addQuantity (item) {
       const newChooseList = this.choosedList.map(chooseItem => {
@@ -82,9 +80,7 @@ export default {
       this.choosedList = newChooseList
     },
     reduceQuantity (item) {
-      console.log('item', item)
-      // let newChooseList = Object.assign({}, this.choosedList)
-      let newChooseList = this.choosedList
+      let newChooseList = JSON.parse(JSON.stringify(this.choosedList)) // 数组深拷贝
       const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)
       if (item.quantity <= 1) {
         newChooseList.splice(currentItemIndex, 1)
@@ -94,9 +90,7 @@ export default {
           quantity: item.quantity - 1
         }
       }
-      console.log('newChooseList', newChooseList, 'this.choosedList', this.choosedList)
       this.choosedList = newChooseList
-      console.log('this.choosedList------', this.choosedList)
     }
   }
 }

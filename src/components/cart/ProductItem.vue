@@ -13,13 +13,7 @@ export default {
     }
   },
 
-  inject: ['addToCart'],
-
-  methods: {
-    // handleAdd(item) {
-    //     this.addToCart(item)
-    // }
-  }
+  inject: ['addToCart']
 }
 </script>
 
