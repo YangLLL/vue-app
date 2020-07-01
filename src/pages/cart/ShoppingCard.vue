@@ -57,6 +57,7 @@ export default {
       return totalPrice
     }
   },
+
   methods: {
     addToCart (item) {
       const currentItemIndex = this.choosedList.findIndex(chooseItem => chooseItem.id === item.id)

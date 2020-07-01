@@ -25,6 +25,7 @@ export default {
     }
     .add-to-card {
         color: #2973b7;
+        cursor: pointer;
         text-decoration: underline;
     }
 </style>

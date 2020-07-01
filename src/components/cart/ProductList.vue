@@ -25,7 +25,4 @@ export default {
     .product-list {
         border-bottom: 1px solid #aaa;
     }
-    ul {
-        list-style-type: none;
-    }
 </style>
