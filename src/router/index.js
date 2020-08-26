@@ -4,6 +4,9 @@ import Main from '@/pages/index'
 import ShoppingCard from '@/pages/cart/ShoppingCard'
 import Home from '@/pages/Home'
 import NoteList from '@/pages/notes/index'
+import Button from '@/pages/components/button'
+import Form from '@/pages/components/form'
+import Navigation from '@/pages/components/navigation'
 
 Vue.use(Router)
 
@@ -18,6 +21,18 @@ export default new Router({
         {
           path: '/home',
           component: Home
+        },
+        {
+          path: '/components/button',
+          component: Button
+        },
+        {
+          path: '/components/form',
+          component: Form
+        },
+        {
+          path: '/components/nav',
+          component: Navigation
         },
         {
           path: '/notes',
