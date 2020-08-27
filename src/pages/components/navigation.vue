@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="nav-container">
     <section class="section">
       <h3>下拉菜单</h3>
       <div>
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .container {
+  .nav-container {
     background-color: #f5f7f9;
   }
   .section {

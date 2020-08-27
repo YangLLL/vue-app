@@ -15,6 +15,7 @@ export default {
 
 <style>
 #app {
-  background-color: #f0f7ff;
+  margin: 0;
+  padding: 0;
 }
 </style>

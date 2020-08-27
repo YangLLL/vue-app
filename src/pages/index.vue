@@ -1,5 +1,5 @@
 <template>
-  <el-container class="layout">
+  <el-container>
     <el-header class="layout-header">
       <div>
         Header
@@ -33,13 +33,7 @@
         </el-menu>
       </el-aside>
       <el-main class="layout-main">
-        <el-breadcrumb class="bread-crumb">
-          <el-breadcrumb-item>一</el-breadcrumb-item>
-          <el-breadcrumb-item>二</el-breadcrumb-item>
-        </el-breadcrumb>
-        <div>
-          <router-view></router-view>
-        </div>
+        <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -63,13 +57,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.layout {
-  max-width: 1300px;
-  margin: auto;
-}
 .layout-header {
   position: fixed;
-  width: 1300px;
+  width: 100%;
   border-bottom: 1px solid #EBEEF5;
   height: 50px;
   line-height: 50px;
@@ -80,18 +70,12 @@ export default {
   padding-top: 60px;
 }
 .layout-main {
-  background-color: #f5f5f7;
-  margin: 0;
-  padding: 0;
-  padding: 10px;
+    padding: 0px;
 }
 .layout-sider {
   width: 200px;
   margin-left: 5px;
   min-height: 100vh;
   border-right: 1px solid rgb(230, 230, 230) ;
-}
-.bread-crumb {
-  padding-bottom: 15px;
 }
 </style>

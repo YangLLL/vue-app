@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="btn-container">
     <section class="section">
       <h3>基础按钮</h3>
        <el-row class="row">
@@ -50,7 +50,7 @@
 </template>
 
 <style lang="scss" scoped>
-  .container {
+  .btn-container {
     background-color: #f5f7f9;
   }
   .section {

@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main class="form-container">
     <section class="section">
       <h3>单选框</h3>
       <div>
@@ -17,16 +17,19 @@
     </section>
     <section class="section">
       <h3>输入框</h3>
-      <el-input v-model="input" placeholder="请输入内容" class="input"></el-input>
-      <p>{{input}}</p><br/>
-      <el-input v-model="password" placeholder="请输入密码" show-password class="input"></el-input><br/>
-      <el-input
-        type="textarea"
-        :rows="2"
-        placeholder="请输入内容"
-        class="input"
-        v-model="textarea">
-    </el-input>
+        <h5>普通输入框</h5>
+        <el-input v-model="input" placeholder="请输入内容" class="input"></el-input>
+        <p>{{input}}</p>
+        <h5>密码</h5>
+        <el-input v-model="password" placeholder="请输入密码" show-password class="input"></el-input>
+        <h5>多行文本</h5>
+        <el-input
+          type="textarea"
+          :rows="2"
+          placeholder="请输入内容"
+          class="input"
+          v-model="textarea">
+      </el-input>
     </section>
      <section class="section">
       <h3>InputNumber 计数器</h3>
@@ -127,7 +130,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.form-container {
   background-color: #f5f7f9;
 }
 .section {
@@ -136,6 +139,9 @@ export default {
   margin-bottom: 20px;
 }
 .input {
-  width: 200px;
+  display: block;
+}
+.upload-tip {
+  margin-top: 20px;
 }
 </style>
