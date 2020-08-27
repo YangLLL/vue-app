@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+## 项目预览
+https://yanglll.github.io/vue-app
+
 ## Build Setup
 
 ``` bash
