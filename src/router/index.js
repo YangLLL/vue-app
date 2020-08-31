@@ -7,6 +7,9 @@ import NoteList from '@/pages/notes/index'
 import Button from '@/pages/components/button'
 import Form from '@/pages/components/form'
 import Navigation from '@/pages/components/navigation'
+import Dialog from '@/pages/components/others/dialog'
+import RichText from '@/pages/components/others/rich-text'
+import EChart from '@/pages/components/others/echart'
 
 Vue.use(Router)
 
@@ -33,6 +36,18 @@ export default new Router({
         {
           path: '/components/nav',
           component: Navigation
+        },
+        {
+          path: '/components/dialog',
+          component: Dialog
+        },
+        {
+          path: '/components/rich-text',
+          component: RichText
+        },
+        {
+          path: '/components/echart',
+          component: EChart
         },
         {
           path: '/notes',

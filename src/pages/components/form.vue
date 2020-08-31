@@ -17,18 +17,18 @@
     </section>
     <section class="section">
       <h3>输入框</h3>
-        <h5>普通输入框</h5>
-        <el-input v-model="input" placeholder="请输入内容" class="input"></el-input>
-        <p>{{input}}</p>
-        <h5>密码</h5>
-        <el-input v-model="password" placeholder="请输入密码" show-password class="input"></el-input>
-        <h5>多行文本</h5>
-        <el-input
-          type="textarea"
-          :rows="2"
-          placeholder="请输入内容"
-          class="input"
-          v-model="textarea">
+      <h5>普通输入框</h5>
+      <el-input v-model="input" placeholder="请输入内容" class="input"></el-input>
+      <p>{{input}}</p>
+      <h5>密码</h5>
+      <el-input v-model="password" placeholder="请输入密码" show-password class="input"></el-input>
+      <h5>多行文本</h5>
+      <el-input
+        type="textarea"
+        :rows="2"
+        placeholder="请输入内容"
+        class="input"
+        v-model="textarea">
       </el-input>
     </section>
      <section class="section">
@@ -57,7 +57,7 @@
       <div slot="tip" class="upload-tip">只能上传jpg/png文件，且不超过500kb</div>
       </el-upload>
     </section>
-      <section class="section">
+    <section class="section">
       <h3>form 表单</h3>
       <el-form :model="form" label-width="60px">
         <el-form-item label="姓名">
@@ -79,6 +79,7 @@
     </section>
   </main>
 </template>
+
 <script>
 export default {
   data () {
